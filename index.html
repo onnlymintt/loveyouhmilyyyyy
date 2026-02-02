@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HBD Mai Huong & 10Y Friendship</title>
     <style>
-        /* CSS Style - Giao diện */
+        /* CSS Giao diện (Đã thêm hiệu ứng cho thư bí mật) */
         body {
             background-color: #1a1a1a;
             color: #fff;
-            font-family: 'Courier New', monospace; /* Font kiểu máy đánh chữ/code */
+            font-family: 'Courier New', monospace;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,7 +21,7 @@
         }
 
         .container {
-            border: 3px solid #f99000; /* Màu cam Haikyuu */
+            border: 3px solid #f99000;
             padding: 30px;
             border-radius: 20px;
             background: rgba(0, 0, 0, 0.9);
@@ -31,23 +31,12 @@
             text-align: center;
         }
 
-        h1 {
-            color: #f99000;
-            font-size: 2rem;
-            margin: 0;
-            line-height: 1.2;
-        }
+        h1 { color: #f99000; font-size: 2rem; margin: 0; line-height: 1.2; }
+        .date { color: #888; font-size: 1rem; margin-bottom: 20px; }
 
-        .date {
-            color: #888;
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        /* KHUNG TIN NHẮN TÌNH BẠN */
         .friendship-box {
             background: #2a2a2a;
-            border-left: 5px solid #00d2d3; /* Màu xanh của Oikawa/Seijoh */
+            border-left: 5px solid #00d2d3;
             padding: 15px;
             margin: 20px 0;
             text-align: left;
@@ -64,37 +53,15 @@
             margin-bottom: 5px;
         }
 
-        .friendship-text {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #e0e0e0;
-        }
+        .friendship-text { font-size: 0.95rem; line-height: 1.5; color: #e0e0e0; }
+        .highlight { color: #f99000; font-weight: bold; font-style: italic; }
 
-        /* Highlight chữ thăng thiên */
-        .highlight {
-            color: #f99000;
-            font-weight: bold;
-            font-style: italic;
-        }
-
-        /* KHUNG GACHA */
-        .gacha-section {
-            margin-top: 30px;
-            border-top: 1px dashed #555;
-            padding-top: 20px;
-        }
-
-        .chinese-text {
-            font-size: 1.5rem;
-            color: #ffcccc; /* Hồng phấn */
-            min-height: 40px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+        .gacha-section { margin-top: 30px; border-top: 1px dashed #555; padding-top: 20px; }
+        .chinese-text { font-size: 1.5rem; color: #ffcccc; min-height: 40px; margin-bottom: 10px; font-weight: bold; }
 
         .card-display {
             width: 100%;
-            height: 350px; /* Chiều cao ảnh */
+            height: 350px;
             background: #111;
             margin: 0 auto 20px;
             border: 2px dashed #444;
@@ -119,12 +86,8 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        .placeholder-text {
-            color: #555;
-            font-size: 3rem;
-        }
+        .placeholder-text { color: #555; font-size: 3rem; }
 
-        /* NÚT BẤM */
         .btn-gacha {
             background: linear-gradient(45deg, #f99000, #ff5e00);
             color: white;
@@ -137,15 +100,33 @@
             box-shadow: 0 5px 20px rgba(255, 94, 0, 0.4);
             transition: transform 0.2s, box-shadow 0.2s;
         }
+        .btn-gacha:active { transform: scale(0.95); }
 
-        .btn-gacha:active {
-            transform: scale(0.95);
+        .footer { margin-top: 20px; font-size: 0.7rem; color: #666; }
+
+        /* CSS CHO PHẦN THƯ BÍ MẬT (Mới thêm) */
+        #secretMessage {
+            display: none; /* Mặc định ẩn */
+            background: #ff4757;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            animation: shake 0.5s;
         }
 
-        .footer {
-            margin-top: 20px;
-            font-size: 0.7rem;
-            color: #666;
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
         }
     </style>
 </head>
@@ -158,13 +139,14 @@
         <div class="friendship-box">
             <p class="friendship-text">
                 Chúc mừn bước vào cuộc tình <b>10 năm</b> của tụi mình! 🎉<br><br>
-              Có thể là hơi xến nhẹ và k biết viết sao cho đỡ sến <br>
-               Nhưng mà i love u so much, and i always appreciate our time together, and nver stọp lovin u <span class="highlight"> </span> 
+                Có thể là hơi sến nhẹ và k biết viết sao cho đỡ sến...<br>
+                Nhưng mà I love u so much, I always appreciate our time together, and never stop lovin u <span class="highlight">💖</span> 
             </p>
         </div>
 
         <div class="gacha-section">
             <p style="font-size: 0.9rem; color: #aaa;">↓ Quà của bà đây, tự tay mà rút ↓</p>
+            <p id="counter" style="font-size: 0.7rem; color: #555;">Đã rút: 0 lần</p>
             
             <div class="chinese-text" id="wishText">Wait for it...</div>
 
@@ -174,6 +156,13 @@
             </div>
 
             <button class="btn-gacha" onclick="gacha()">Gacha Ngay!</button>
+
+            <div id="secretMessage">
+                <h3>🎉 SURPRISE!!!</h3>
+                <p>Kiên trì đấy! Bấm đủ 10 lần rồi à? <br>
+                Thật ra món quà lớn nhất không phải mấy anh 2D này đâu...<br>
+                Mà là tao nè! Hahaha mãi bên nhau bạn nhé! 👭</p>
+            </div>
         </div>
 
         <div class="footer">
@@ -182,43 +171,39 @@
     </div>
 
     <script>
-        // DATA: Kho tàng trai đẹp và lời chúc
-        // Em thay link ảnh (src) vào trong dấu ngoặc kép nhé
+        // DATA ĐÃ ĐỔI TÊN FILE THÀNH KHÔNG DẤU (Thy nhớ sửa tên file thật trên GitHub y chang vầy nha)
         const cards = [
-            { 
-                ch: "祝你生日快乐 (Sinh nhật vui vẻ!)", 
-                src: "https://www.pinterest.com/pin/1407443630545619/" 
-            },
-            { 
-                ch: "心想事成 (Cầu được ước thấy)", 
-                src: "https://www.pinterest.com/pin/4574037117999775/" // Ảnh Kageyama
-            },
-            { 
-                ch: "永远美丽 (Mãi mãi xinh đẹp)", 
-                src: "https://www.pinterest.com/pin/59672763806904541/" // Ảnh Kuroo
-            },
-            { 
-                ch: "天天开心 (Ngày nào cũng vui)", 
-                src: "https://www.pinterest.com/pin/19069998418147637/" // Ảnh Kenma
-            },
-            { 
-                ch: "这是你要的老公 (Chồng bà nè!)", 
-                src: "https://www.pinterest.com/pin/25192079161258565/" // Ảnh động (GIF) cho ngầu
-            }
+            { ch: "祝你生日快乐 (Sinh nhật vui vẻ!)", src: "xinh đẹp.jpg" },
+            { ch: "心想事成 (Cầu được ước thấy)", src: "kaka.jpg" },
+            { ch: "永远美丽 (Mãi mãi xinh đẹp)", src: "nam mô.jpg" },
+            { ch: "天天开心 (Ngày nào cũng vui)", src: "hè hè.jpg" },
+            { ch: "这是你要的老公 (Chồng bà nè!)", src: "3 nhóc.jpg" }
         ];
 
+        let count = 0; // Biến đếm số lần bấm
+
         function gacha() {
-            // Random ngẫu nhiên
+            // 1. Tăng số lần đếm
+            count++;
+            document.getElementById('counter').innerText = "Đã rút: " + count + " lần";
+
+            // 2. Random ảnh như bình thường
             const item = cards[Math.floor(Math.random() * cards.length)];
-            
-            // Hiện chữ tiếng Trung
             document.getElementById('wishText').innerText = item.ch;
-            
-            // Hiện ảnh
             const imgEl = document.getElementById('waifuImg');
             imgEl.src = item.src;
             imgEl.style.display = 'block';
             document.getElementById('placeholder').style.display = 'none';
+
+            // 3. Kiểm tra bí mật (Nếu bấm đủ 10 lần)
+            if (count === 10) {
+                const secret = document.getElementById('secretMessage');
+                secret.style.display = 'block'; // Hiện thư bí mật
+                secret.scrollIntoView({behavior: "smooth"}); // Tự cuộn xuống xem
+                
+                // Đổi lời chúc đặc biệt
+                document.getElementById('wishText').innerText = "友谊长存 (Tình bạn trường tồn)";
+            }
         }
     </script>
 
