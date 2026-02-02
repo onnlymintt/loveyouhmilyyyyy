@@ -173,11 +173,11 @@
     <script>
         // DATA ĐÃ ĐỔI TÊN FILE THÀNH KHÔNG DẤU (Thy nhớ sửa tên file thật trên GitHub y chang vầy nha)
         const cards = [
-            { ch: "祝你生日快乐 (Sinh nhật vui vẻ!)", src: "xinh đẹp.jpg" },
+            { ch: "祝你生日快乐 (Sinh nhật vui vẻ!)", src: "xinhdep.jpg" },
             { ch: "心想事成 (Cầu được ước thấy)", src: "kaka.jpg" },
-            { ch: "永远美丽 (Mãi mãi xinh đẹp)", src: "nam mô.jpg" },
-            { ch: "天天开心 (Ngày nào cũng vui)", src: "hè hè.jpg" },
-            { ch: "这是你要的老公 (Chồng bà nè!)", src: "3 nhóc.jpg" }
+            { ch: "永远美丽 (Mãi mãi xinh đẹp)", src: "nammo.jpg" },
+            { ch: "天天开心 (Ngày nào cũng vui)", src: "hehe.jpg" },
+            { ch: "这是你要的老公 (Chồng bà nè!)", src: "3nhoc.jpg" }
         ];
 
         let count = 0; // Biến đếm số lần bấm
@@ -196,7 +196,7 @@
             document.getElementById('placeholder').style.display = 'none';
 
             // 3. Kiểm tra bí mật (Nếu bấm đủ 10 lần)
-            if (count === 10) {
+            if (count === 5) {
                 const secret = document.getElementById('secretMessage');
                 secret.style.display = 'block'; // Hiện thư bí mật
                 secret.scrollIntoView({behavior: "smooth"}); // Tự cuộn xuống xem
